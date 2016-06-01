@@ -1,0 +1,127 @@
+2016-05-14 13:36:20 [scrapy] ERROR: Error downloading <GET http://en.wikipedia.org/robots.txt>: u'\xd8'
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 588, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/usr/local/lib/python2.7/site-packages/scrapy/downloadermiddlewares/robotstxt.py", line 97, in _parse_robots
+    rp.parse(body.splitlines())
+  File "/usr/local/Cellar/python/2.7.11/Frameworks/Python.framework/Versions/2.7/lib/python2.7/robotparser.py", line 120, in parse
+    entry.rulelines.append(RuleLine(line[1], False))
+  File "/usr/local/Cellar/python/2.7.11/Frameworks/Python.framework/Versions/2.7/lib/python2.7/robotparser.py", line 174, in __init__
+    self.path = urllib.quote(path)
+  File "/usr/local/Cellar/python/2.7.11/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib.py", line 1303, in quote
+    return ''.join(map(quoter, s))
+KeyError: u'\xd8'
+2016-05-14 13:36:23 [scrapy] ERROR: Spider error processing <GET https://en.wikipedia.org/wiki/Revolution_OS> (referer: https://en.wikipedia.org/wiki/Python_%28programming_language%29)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spiders/crawl.py", line 72, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "/Users/ChowHungLou/PythonScraping/chapter3/wikiSpider/wikiSpider/spiders/articleSpider.py", line 17, in parse_item
+    title = response.xpath('//h1/text()')[0].extract()
+  File "/usr/local/lib/python2.7/site-packages/parsel/selector.py", line 58, in __getitem__
+    o = super(SelectorList, self).__getitem__(pos)
+IndexError: list index out of range
+2016-05-14 13:36:24 [scrapy] ERROR: Spider error processing <GET https://en.wikipedia.org/wiki/Programming_Perl> (referer: https://en.wikipedia.org/wiki/Dynamic_programming_language)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spiders/crawl.py", line 72, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "/Users/ChowHungLou/PythonScraping/chapter3/wikiSpider/wikiSpider/spiders/articleSpider.py", line 17, in parse_item
+    title = response.xpath('//h1/text()')[0].extract()
+  File "/usr/local/lib/python2.7/site-packages/parsel/selector.py", line 58, in __getitem__
+    o = super(SelectorList, self).__getitem__(pos)
+IndexError: list index out of range
+2016-05-14 13:36:27 [scrapy] ERROR: Spider error processing <GET https://en.wikipedia.org/wiki/The_Unix_Programming_Environment> (referer: https://en.wikipedia.org/wiki/Go_(programming_language))
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spiders/crawl.py", line 72, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "/Users/ChowHungLou/PythonScraping/chapter3/wikiSpider/wikiSpider/spiders/articleSpider.py", line 17, in parse_item
+    title = response.xpath('//h1/text()')[0].extract()
+  File "/usr/local/lib/python2.7/site-packages/parsel/selector.py", line 58, in __getitem__
+    o = super(SelectorList, self).__getitem__(pos)
+IndexError: list index out of range
+2016-05-14 13:36:28 [scrapy] ERROR: Spider error processing <GET https://en.wikipedia.org/wiki/The_Practice_of_Programming> (referer: https://en.wikipedia.org/wiki/Go_(programming_language))
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spiders/crawl.py", line 72, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "/Users/ChowHungLou/PythonScraping/chapter3/wikiSpider/wikiSpider/spiders/articleSpider.py", line 17, in parse_item
+    title = response.xpath('//h1/text()')[0].extract()
+  File "/usr/local/lib/python2.7/site-packages/parsel/selector.py", line 58, in __getitem__
+    o = super(SelectorList, self).__getitem__(pos)
+IndexError: list index out of range
+2016-05-14 13:36:35 [scrapy] ERROR: Spider error processing <GET https://en.wikipedia.org/wiki/EWeek> (referer: https://en.wikipedia.org/wiki/Maqetta)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spiders/crawl.py", line 72, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "/Users/ChowHungLou/PythonScraping/chapter3/wikiSpider/wikiSpider/spiders/articleSpider.py", line 17, in parse_item
+    title = response.xpath('//h1/text()')[0].extract()
+  File "/usr/local/lib/python2.7/site-packages/parsel/selector.py", line 58, in __getitem__
+    o = super(SelectorList, self).__getitem__(pos)
+IndexError: list index out of range
+2016-05-14 13:36:37 [scrapy] ERROR: Spider error processing <GET https://en.wikipedia.org/wiki/World_of_Tanks> (referer: https://en.wikipedia.org/wiki/Libtorrent)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/usr/local/lib/python2.7/site-packages/scrapy/spiders/crawl.py", line 72, in _parse_response
+    cb_res = callback(response, **cb_kwargs) or ()
+  File "/Users/ChowHungLou/PythonScraping/chapter3/wikiSpider/wikiSpider/spiders/articleSpider.py", line 17, in parse_item
+    title = response.xpath('//h1/text()')[0].extract()
+  File "/usr/local/lib/python2.7/site-packages/parsel/selector.py", line 58, in __getitem__
+    o = super(SelectorList, self).__getitem__(pos)
+IndexError: list index out of range
